@@ -1,13 +1,13 @@
 package structures;
 
-public class Queue {
+public class QueueBasedOnArray {
     int front;
     int rear;
     int items;
     int maxSize;
     int[] array;
 
-    public Queue(int size) {
+    public QueueBasedOnArray(int size) {
         maxSize = size;
         array = new int[size];
         front = 0;
@@ -32,7 +32,5 @@ public class Queue {
         items--;
         return temp;
     }
-
-    public void isFull
 }
 

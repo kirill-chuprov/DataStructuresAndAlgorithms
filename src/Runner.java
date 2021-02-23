@@ -1,15 +1,16 @@
-import structures.LinkedList;
+import structures.exercises.Array;
+
+import java.util.ArrayList;
 
 public class Runner {
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.insertFirst(1);
-        linkedList.insertFirst(2);
-        linkedList.insertFirst(3);
+        Array array = new Array(5);
+        array.push(1);
+        array.push(6);
+        array.push(3);
+        array.push(2);
+        array.push(5);
 
-        linkedList.insertLast(4);
-        linkedList.insertLast(5);
-        linkedList.insertLast(6);
-        linkedList.displayList();
+        array.remove(2);
     }
 }
