@@ -55,6 +55,22 @@ public class SortedArray {
         }
     }
 
+    private int recFind(long searchKey, int lowerBound,
+                        int upperBound) {
+        int curIn;
+        curIn = (lowerBound + upperBound) / 2;
+        if (array[curIn] == searchKey)
+            return curIn;
+        else if (lowerBound > upperBound)
+            return numberOfElements;
+        else {
+            if (array[curIn] < searchKey)
+                return recFind(searchKey, curIn + 1, upperBound);
+            else
+                return recFind(searchKey, lowerBound, curIn - 1);
+        }
+    }
+
     public static void printPrimes(int n) {
         boolean[] primes = new boolean[n + 1];
         for (int i = 2; i <= n; i++) {
