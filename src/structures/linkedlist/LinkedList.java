@@ -1,17 +1,4 @@
-package structures;
-
-class Link {
-    int data;
-    Link next;
-
-    public Link(int data) {
-        this.data = data;
-    }
-
-    public void displayLink() {
-        System.out.println("data" + data);
-    }
-}
+package structures.linkedlist;
 
 public class LinkedList {
     Link first;
@@ -85,5 +72,18 @@ public class LinkedList {
         }
         first = first.next;
         return temp;
+    }
+
+    static class Link {
+        int data;
+        Link next;
+
+        public Link(int data) {
+            this.data = data;
+        }
+
+        public void displayLink() {
+            System.out.println("data" + data);
+        }
     }
 }

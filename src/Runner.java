@@ -1,11 +1,11 @@
-import structures.Recursion;
-import structures.exercises.Array;
-
-import java.util.ArrayList;
+import structures.exercises.LinkedList;
 
 public class Runner {
     public static void main(String[] args) {
-        int triangle = Recursion.factorial(5);
-        System.out.println(triangle);
+        LinkedList x = new LinkedList();
+        x.pushBack(1);
+        x.pushBack(2);
+        x.pushBack(3);
+        x.reverse();
     }
 }
