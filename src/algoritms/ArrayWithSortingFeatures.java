@@ -20,7 +20,7 @@ public class ArrayWithSortingFeatures {
 
     public int[] mergeSort() {
         int[] workSpace = new int[elements];
-        recMergeSort(workSpace, 0, elements - 1);
+        mergeSort(workSpace, 0, elements - 1);
         return array;
     }
 
@@ -47,13 +47,51 @@ public class ArrayWithSortingFeatures {
         return array;
     }
 
-    private void recMergeSort(int[] workSpace, int lowerBound, int upperBound) {
+    public void quickSort() {
+        recQuickSort(0, elements - 1);
+    }
+
+    public void recQuickSort(int left, int right) {
+        if (right - left <= 0) {
+            return;
+        } else {
+            long pivot = array[right];
+            int partition = partitionIt(left, right, pivot);
+            recQuickSort(left, partition - 1);
+            recQuickSort(partition + 1, right);
+        }
+    }
+
+    public int partitionIt(int left, int right, long pivot) {
+        int leftPtr = left - 1;
+        int rightPtr = right;
+        while (true) {
+            while (array[++leftPtr] < pivot)
+                ; // (nop)
+            while (rightPtr > 0 && array[--rightPtr] > pivot)
+                ; // (nop)
+            if (leftPtr >= rightPtr)
+                break;
+            else swap(leftPtr, rightPtr);
+        }
+        swap(leftPtr, right);
+        return leftPtr;
+    }
+
+    public void swap(int dex1, int dex2) { // Перестановка двух элементов
+        int temp;
+        temp = array[dex1];
+        array[dex1] = array[dex2];
+        array[dex2] = temp;
+    }
+
+    private void mergeSort(int[] workSpace, int lowerBound, int upperBound) {
         if (lowerBound != upperBound) {
             int mid = (lowerBound + upperBound) / 2;
             // Сортировка нижней половины
-            recMergeSort(workSpace, lowerBound, mid);
+            mergeSort(workSpace, lowerBound, mid);
             // Сортировка верхней половины
-            recMergeSort(workSpace, mid + 1, upperBound);
+            mergeSort(workSpace, mid + 1, upperBound);
             // Слияние
             merge(workSpace, lowerBound, mid + 1, upperBound);
         }
