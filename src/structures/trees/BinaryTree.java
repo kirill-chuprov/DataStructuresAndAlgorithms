@@ -86,6 +86,8 @@ public class BinaryTree {
                     parent.leftChild = successor;
                 else
                     parent.rightChild = successor;
+                // Преемник связывается с левым потомком current
+                successor.leftChild = current.leftChild;
                 return true;
             }
     }
