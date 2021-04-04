@@ -7,6 +7,7 @@ public class Node {
     public Node rightChild;
 
     public Node(int key, int data){
-
+        this.key = key;
+        this.data = data;
     }
 }
