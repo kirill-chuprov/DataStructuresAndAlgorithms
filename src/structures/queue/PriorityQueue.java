@@ -1,4 +1,4 @@
-package structures;
+package structures.queue;
 
 public class PriorityQueue {
     private int maxSize;

@@ -1,4 +1,4 @@
-package algoritms;
+package sorting;
 
 public class ArrayWithSortingFeatures {
     int elements;

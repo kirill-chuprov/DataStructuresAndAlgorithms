@@ -1,4 +1,4 @@
-package structures;
+package structures.array;
 
 public class SortedArray {
     private final long[] array;
